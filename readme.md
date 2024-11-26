@@ -16,7 +16,39 @@ This is the backend of a Student Management System API built using Node.js, Expr
 
 ## Installation
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/tonystark5683/Student-Crud-App-Backend.git
-cd student-management-backend
+1. Clone the repository to your local machine.
+
+2. Install dependencies by running the following command:
+   - `npm install`
+
+3. Setup Environment Variables
+   - Create a `.env` file at the root of your project and add the following variables:
+     - `MONGO_URI=mongodb://localhost:27017/StudentDB`
+     - `PORT=3000`
+     
+     For production, replace `MONGO_URI` with your MongoDB cloud database URL and update the `PORT` if necessary.
+
+4. Run the application locally:
+   - For development, use the following command:
+     - `npm run dev`
+   - For production, use:
+     - `npm start`
+
+## Endpoints
+
+### `POST /students`
+Adds a new student to the database. The request body should contain the student's details (name, email, age, address, and password).
+
+### `GET /students`
+Fetches a list of all students in the database.
+
+### `GET /students/:id`
+Fetches a single student by their ID.
+
+### `PUT /students/:id`
+Updates an existing student's details using their ID. The request body should contain the updated student details.
+
+### `DELETE /students/:id`
+Deletes a student by their ID.
+
+
